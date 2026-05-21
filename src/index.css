@@ -26,13 +26,46 @@ body {
   scroll-behavior: smooth;
 }
 
+.screen-tabs {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.screen-tab {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.screen-tab.active {
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+}
+
 .hero-section {
   position: relative;
   height: 100vh;
   overflow: hidden;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  touch-action: pan-y;
 }
 
 .hero-canvas {
@@ -49,6 +82,7 @@ body {
   padding: 60px 20px;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  padding-bottom: 80px;
 }
 
 .bubble-section {
@@ -62,6 +96,7 @@ body {
   scroll-snap-align: start;
   scroll-snap-stop: always;
   color: white;
+  padding-bottom: 80px;
 }
 
 .bubble-title {
