@@ -118,7 +118,10 @@ const pickRandom = (list, exclude = []) => {
 const buildImageUrl = (name) => `/figures/${encodeURIComponent(name)}`;
 
 const buildBubble = ({ id, name, bounds, existing }) => {
-  const size = rand(180, 240);
+  const isCompact = bounds.width < 520 || bounds.height < 520;
+  const minSize = isCompact ? 110 : 180;
+  const maxSize = isCompact ? 160 : 240;
+  const size = rand(minSize, maxSize);
   const padding = 20;
   const maxX = Math.max(padding, bounds.width - size - padding);
   const maxY = Math.max(padding, bounds.height - size - padding);

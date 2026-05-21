@@ -294,8 +294,9 @@ body {
 
 @media (max-width: 900px) {
   .game-layout {
+    position: relative;
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 14px;
   }
 
   .game-frame {
@@ -308,8 +309,28 @@ body {
     height: 420px;
   }
 
+  .game-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+  }
+
+  .game-button:first-of-type {
+    left: 6px;
+  }
+
+  .game-button:last-of-type {
+    right: 6px;
+  }
+
   .game-button img {
-    width: 52px;
-    height: 52px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .bubble-stage {
+    width: 94vw;
+    height: min(520px, 60vh);
   }
 }
